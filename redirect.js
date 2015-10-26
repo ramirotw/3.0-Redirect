@@ -5,6 +5,9 @@
         .config(function ($locationProvider) {
             $locationProvider.html5Mode(true);
         })
+        .config(function ($compileProvider) {
+            $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel|chrome-extension|commercialtribe):/);
+        })
         .constant('WEBTOP_URLS', {
             WIN32: 'https://s3.amazonaws.com/ct3.web/Webtop/DEV/latest/installers/win32/win32.zip',
             WIN64: 'https://s3.amazonaws.com/ct3.web/Webtop/DEV/latest/installers/win64/win64.zip',
