@@ -4,9 +4,9 @@ var http = require('http');
 var fs = require('fs');
 var app = express();
 
-module.exports = function (port)
+module.exports = function (port, dir)
 {
-    app.use('/', express.static(__dirname));
+    app.use('/', express.static(__dirname + '/' + dir));
 
     var server = http.createServer(app).listen(port, function ()
     {

@@ -1,29 +1,25 @@
 (function () {
     'use strict';
 
-    angular.module('RedirectApp', ['ngMaterial'])
+    angular.module('RedirectApp', ['ctConfig', 'ngMaterial'])
         .config(function ($locationProvider) {
             $locationProvider.html5Mode(true);
         })
         .config(function ($compileProvider) {
             $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel|chrome-extension|commercialtribe):/);
         })
-        .constant('WEBTOP_URLS', {
-            WIN32: 'https://s3.amazonaws.com/ct3.web/Webtop/DEV/latest/installers/win32/win32.zip',
-            WIN64: 'https://s3.amazonaws.com/ct3.web/Webtop/DEV/latest/installers/win64/win64.zip',
-            OSX64: 'https://s3.amazonaws.com/ct3.web/Webtop/DEV/latest/osx/ct-app.dmg',
-            IPAD: 'https://itunes.apple.com/us/app/commercialtribe/id1039376633',
+        .constant('CUSTOM_WEBTOP_URLS', {
             CHROME: "https://www.google.com/chrome/browser/desktop/"
         })
         .constant('CT_URL', 'https://www.commercialtribe.net')
 
-        .controller('AppCtrl', function ($scope, $window, $timeout, $location, Detector, WEBTOP_URLS, CT_URL) {
+        .controller('AppCtrl', function ($scope, $window, $timeout, $location, Detector, WEBTOP_URLS, CUSTOM_WEBTOP_URLS, CT_URL) {
 
 
             var urlParams = $location.search();
 
             $scope.params = urlParams;
-            $scope.dowloads = WEBTOP_URLS;
+            $scope.dowloads = angular.merge({}, WEBTOP_URLS, CUSTOM_WEBTOP_URLS);
 
             urlParams.to = '?google.com';
             $scope.urls = {
