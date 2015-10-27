@@ -5,7 +5,8 @@
     "angular": "~1.4.7",
     "angular-animate": "~1.4.7",
     "angular-aria": "~1.4.7",
-    "angular-material": "~0.11.4"
+    "angular-material": "~0.11.4",
+    "EnvConfigs": "git@github.com:CommercialTribe/3.0-Configs.git#DEVELOPMENT"
   },
   "devDependencies": {
     "angular-mocks": "~1.4.7"
