@@ -16,7 +16,7 @@ gulp.task('serve', function() {
 
   var destination = 'public';
 
-  var envTask = gulp.src('bower_components/EnvConfigs/Front-end/' + argv.env + '.config.js')
+  var envTask = gulp.src('bower_components/EnvConfigs/Redirect/' + argv.env + '.config.js')
       .pipe(rename('env.config.js'))
       .pipe(gulp.dest(destination));
 
