@@ -19,7 +19,7 @@
             var urlParams = $location.search();
 
             $scope.params = urlParams;
-            $scope.dowloads = angular.merge({}, WEBTOP_URLS, CUSTOM_WEBTOP_URLS);
+            $scope.downloads = angular.merge({}, WEBTOP_URLS, CUSTOM_WEBTOP_URLS);
 
             urlParams.to = '?google.com';
             $scope.urls = {
@@ -50,11 +50,11 @@
             function activate() {
 
                 if (Detector.isWin32()) {
-                    $scope.dowloads.WEBTOP = $scope.dowloads.WIN32;
+                    $scope.downloads.WEBTOP = $scope.downloads.WIN32;
                 } else if (Detector.isWin64()) {
-                    $scope.dowloads.WEBTOP = $scope.dowloads.WIN64;
+                    $scope.downloads.WEBTOP = $scope.downloads.WIN64;
                 } else if (Detector.isMac()) {
-                    $scope.dowloads.WEBTOP = $scope.dowloads.OSX64;
+                    $scope.downloads.WEBTOP = $scope.downloads.OSX64;
                 }
             }
         //DOESNT WORK -
