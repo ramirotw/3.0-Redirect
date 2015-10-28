@@ -14,12 +14,11 @@ module.exports = function(config) {
         //dev deps
         'bower_components/angular-mocks/angular-mocks.js',
 
-        'redirect.js',
-        'redirect.spec.js'
+        'app/*.js'
     ],
 
     preprocessors: {
-      'redirect.js': ['coverage']
+      'app/*!(*spec).js': ['coverage']
     },
 
     // test results reporter to use
