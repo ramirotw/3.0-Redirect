@@ -1,5 +1,7 @@
 var gulp = require('gulp');
 
+gulp.task('default', ['serve']);
+
 gulp.task('test', function () {
   var server = require('karma').server;
 
@@ -16,7 +18,7 @@ gulp.task('serve', function() {
 
   var destination = 'app';
 
-  var envTask = gulp.src('bower_components/EnvConfigs/Front-end/' + argv.env + '.config.js')
+  var envTask = gulp.src('bower_components/EnvConfigs/Front-end/' + (argv.env  || 'dev') + '.config.js')
       .pipe(rename('env.config.js'))
       .pipe(gulp.dest(destination));
 
