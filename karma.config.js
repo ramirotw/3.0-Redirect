@@ -14,7 +14,13 @@ module.exports = function(config) {
         //dev deps
         'bower_components/angular-mocks/angular-mocks.js',
 
-        'app/*.js'
+        'app/*module.js',
+        'app/*.js',
+        'test/*spec.js' //we keep them in a separate folder because the /app is served directly - we don't want to serve tests
+    ],
+
+    exclude: [
+        'app/vendor/*.js'
     ],
 
     preprocessors: {

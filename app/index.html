@@ -76,6 +76,18 @@
 
     </style>
 
+    <!-- Angular Material Dependencies -->
+    <script src="vendor/angular.min.js"></script>
+    <script src="vendor/angular-animate.min.js"></script>
+    <script src="vendor/angular-aria.min.js"></script>
+    <script src="vendor/angular-material.min.js"></script>
+    <script src="app.module.js"></script>
+    <script src="env.config.js"></script>
+    <script src="app.config.js"></script>
+    <script src="app.controller.js"></script>
+    <script src="detector.service.js"></script>
+    <script src="linker.service.js"></script>
+
 </head>
 <body ng-controller="AppCtrl" layout="column">
     
@@ -100,7 +112,7 @@
                         <img ng-if="isWin()" src="http://d2531ae1m2uaia.cloudfront.net/images/windows-icon.png" alt="windows logo" class="ct-bottom-20"/>
                         <!-- MAC WEBTOP-->
                         <img ng-if="isMac()" src="http://d2531ae1m2uaia.cloudfront.net/images/mac-icon.png" alt="apple logo" class="ct-bottom-20"/>
-                        <md-button ng-href="{{urls.webtop}}" class="md-raised ct-success ct-top-20">Desktop app</md-button>
+                        <md-button ng-href="{{links.webtop}}" class="md-raised ct-success ct-top-20">Desktop app</md-button>
                     </div>
 
                     <!-- WEB-->
@@ -118,7 +130,7 @@
                                 </g>
                             </g>
                         </svg>
-                        <md-button ng-href="{{urls.browser}}" class="md-raised ct-success ct-top-20">Open in Browser</md-button>
+                        <md-button ng-href="{{links.web}}" class="md-raised ct-success ct-top-20">Open in Browser</md-button>
                     </div>
                 </div>
                 <div layout="row" layout-align="center center" flex>
@@ -157,13 +169,6 @@
     </div>
 
 
-    <!-- Angular Material Dependencies -->
-    <script src="vendor/angular.min.js"></script>
-    <script src="vendor/angular-animate.min.js"></script>
-    <script src="vendor/angular-aria.min.js"></script>
-    <script src="vendor/angular-material.min.js"></script>
-    <script src="env.config.js"></script>
-    <script src="redirect.js"></script>
 
 </body>
 </html>
